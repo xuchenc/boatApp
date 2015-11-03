@@ -1,0 +1,55 @@
+<div ng-controller="PostDetailController as vm">
+	<div class="col-sm-6">
+					<h1 style='text-align:center'>Boat Info</h1><hr />
+					<img height='500px' width="500px" ng-src="{{vm.post.image}}" class="img-responsive"/>
+					<ul>
+						<li><h1>Capacity: {{vm.post.capaticy}}</h1></li>
+						<li><h2>Price: ${{vm.post.price}}</h2></li>
+						<li><h2>Contact: {{vm.post.contact}}</h2></li>
+
+					</ul>
+				</div>
+<div class='col-sm-6'>
+	<h1 style='text-align:center'>Owner Info</h1><hr />
+					<img ng-src="{{vm.post.ownerImage}}" class="img-responsive"/>
+					<ul>
+						<li><h1>Owner Name: {{vm.post.ownerName}}</h1></li>
+						<li><h2>Location: {{vm.post.location}}</h2></li>
+						<li><h2>Email: {{vm.post.email}}</h2></li>
+					</ul>
+
+			</div>
+
+
+<div  style='text-align:center' class='col-sm-12'>
+	<hr />
+<button ng-show="!addComment" ng-click="addComment = true;" class="btn btn-warning">Say Some to Owner</button>
+<div  style='text-align:center' ng-show="addComment">
+	<textarea rows='10' cols='110' ng-model="vm.newComment" placeholder="Comments Here..."></textarea>
+
+			<button  class="btn btn-primary" ng-click="addComment = false; vm.addComment();">Submit</md-button>
+			<button class="btn btn-danger" ng-click="addComment = false;">Cancel</md-button>
+</div>
+</div>
+
+
+<div >
+		<div ng-repeat="comment in vm.comments">
+<!-- comment.user -->
+			<h2>User: {{nav.status.username}}</h2>
+			<h1>Comment: {{comment.body}}</h1>
+
+			<button type="button"  ng-click="vm.deleteComment(comment)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+      <hr />
+			<br>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+</div>

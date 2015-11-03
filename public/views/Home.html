@@ -1,0 +1,108 @@
+<div ng-controller="HomeController as vm">
+	<h1 style='text-align:center'>Pick Your Boat Today!</h1>
+
+
+
+	<div id='slideshow'>
+		<div>
+			<img src='http://www.riehninsurance.com/_image/chicago-insurance-boating-watercraft.jpg'>
+		</div>
+		<div>
+			<img src='http://vayongroup.com/wp-content/uploads/2014/08/Electric-Boat.jpg'>
+		</div>
+		<div>
+			<img src='http://www.charterworld.com/images/yachts/Sailing%20Yacht%20DAIMA%20-%20At%20Sail%201.jpg'>
+		</div>
+		<div>
+			<img src='http://s.w-x.co/ExteriorBoat.jpg'>
+		</div>
+	</div>
+
+
+
+
+
+<!-- <form>
+	<select name='users-out' id='students-out' multiple='multiple' size='10'>
+		<option value='1' title='LA'>LA</option>
+		<option value='2' title='SF'>SF</option>
+		<option value='3' title='San Diego'>San Diego</option>
+		<option value='4' title='Boston'>Boston</option>
+	</select>
+	<input type='text' id='search' onkeyup='searchstudent()'/>
+</form> -->
+
+<div id='users'>
+	<input class='search' placeholder="Search by Location" />
+	<button class='sort' data-sort='name'>Sort by Location</button>
+
+	<ul class='list'>
+		<li>
+			<h3 class='name'>Owner: Batman</h3>
+			<p class='location'>Location: LA</p>
+		</li>
+		<li>
+			<h3 class='name'>Owner: Jacky</h3>
+			<p class='location'>Location: SF</p>
+		</li>
+		<li>
+			<h3 class='name'>Owner: Peter</h3>
+			<p class='location'>Location: San Diego</p>
+		</li>
+		<li>
+			<h3 class='name'>Owner: Alice</h3>
+			<p class='location'>Location: Boston</p>
+		</li>
+	</ul>
+</div>
+
+<h1 style='text-align:center'>Use the map to find your location</h1>
+<input id='pac-input' class='control' type="text" placeholder="Search Box">
+<div id="map"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 style='text-align:center'>Here are all the posts</h1>
+
+	<div class="well container" ng-repeat="post in vm.posts">
+		<div class="row">
+			<div class="col-sm-12">
+				<img ng-src="{{post.image}}" class='img-responsive' />
+			</div>
+
+
+ <!-- <h3><a ui-sref="PostDetails({id:post._id})"><i>Movie: {{post.name}}</i></a></h3> -->
+<div class='col-sm-9'>
+ <!-- <h3><i>Capacity: {{post.capaticy}}</i></h3> -->
+ <h3><i>Price: ${{post.price}}</i></h3>
+ <h3><i>Contact: {{post.contact}}</i></h3>
+ <h3><i>Location: {{post.location}}</i></h3>
+
+
+ <div class="fb-like" data-href="http://localhost:3000/#/postdetail/postId" data-width="200" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+ <div class="fb-like" data-href="http://www.youtube.com" data-width="200" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
+ </div>
+
+
+<!-- <button type="button" class="btn btn-warning" ui-sref='EditPost'>Edit</button>
+<button type="button" class="btn btn-danger" ng-click='vm.deletePost(post)'>Delete</button> -->
+<button ui-sref='EditPost({id:post._id})' type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+<button ng-click='vm.deletePost(post)' type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+<button class='btn btn-info btn-lg' ui-sref='PostDetail({id: post._id})'>Owner Details</button>
+</div>
+</div>
+</div>

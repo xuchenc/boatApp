@@ -1,0 +1,27 @@
+<div ng-controller="CreateController as vm">
+  <form class="well container" ng-submit="vm.createPost()">
+		<label>Image</label><br>
+		<input class="form-control" ng-model="vm.post.image" placeholder="Boat Image..."><br>
+		<label>Capacity(peoples)</label><br>
+		<input class="form-control" ng-model="vm.post.capacity" placeholder="Boat Capacity..."><br>
+		<label>Price in Total($)</label><br>
+		<input class="form-control" ng-model="vm.post.price" placeholder="Price..."><br>
+    <label>Phone</label><br>
+    <input class="form-control" ng-model="vm.post.contact" placeholder="Contact Info..."><br>
+
+    <label>Owner</label><br>
+    <input class="form-control" ng-model="vm.post.ownerImage" placeholder="Owner image url..."><br>
+    <label>Owner Name</label><br>
+    <input class="form-control" ng-model="vm.post.ownerName" placeholder="Owner Name..."><br>
+    <label>Location</label><br>
+    <input class="form-control" ng-model="vm.post.location" placeholder="Location..."><br>
+    <label>Email</label><br>
+    <input class="form-control" ng-model="vm.post.email" placeholder="Email..."><br>
+		<!-- <button type="button" class="btn btn-success" ng-click="vm.createPost()">Post Your Boat</button> -->
+<div style='text-align:center'>
+    <button type="button" class="btn btn-success btn-lg" ng-click="vm.createPost()"><span class="glyphicon glyphicon-cloud-upload"></span> Upload in Cloud</button>
+    <!-- <button type="button" class="btn btn-danger" ui-sref="Home">Back to Home</button> -->
+    <a ui-sref="Home" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-backward"> Back</span></a>
+  </div>
+	</form>
+</div>
